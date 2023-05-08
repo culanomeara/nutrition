@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-f22ooi@ow0zic@=igu5$t6i(0)6qc(eo&9z*-&!5ckr--o2h#d
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8004-culanomeara-nutrition-bohl7ak6qb.us2.codeanyapp.com']
+ALLOWED_HOSTS = ['8000-culanomeara-nutrition-bohl7ak6qb.us2.codeanyapp.com']
 
 
 AUTHENTICATION_BACKENDS = [
@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +79,10 @@ ROOT_URLCONF = 'nutrition.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates', 'allauth'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
